@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+body{ display: flex; justify-content: center;}
+.list-wrap{
+  width: 300px;
+  margin: 0 auto;
+}
+input[type="text"]{
+  width: 300px;
+  height: 30px;
+  border: 1px solid pink;
+}
+.list, .list2{
+  width: 300px;
+  height: 100px;
+  border: 2px solid pink;
+  border-radius: 20px;
+  text-align: center;
+  margin: 10px 0;
+}
+</style>
+<body>
+  <div class="list-wrap">
+    <div class="search">
+      <input required="required" type="text" id ="search" name="user_name" placeholder="">
+    </div>
+    <h2 style="font-size:14px; text-align: center;">재환 뽀삐 룰루 삐약만 검색돼야 하는데, <Br> 꾸 뿌 이런거 검색해도 다 나옴.</h2>
+    <div class="list">
+      <h3>심재환</h3>
+      <p>양말꾸러미댕꾸댕꾸</p>
+    </div>
+    <div class="list">
+      <h3>심뽀삐</h3>
+      <p>안녕하세요 난 뽀삐뿌삐</p>
+    </div>
+    <div class="list">
+      <h3>심룰루</h3>
+      <p>깽깽이발로갈까요 꾸꾸뿌뿌</p>
+    </div>
+    <div class="list">
+      <h3>심삐약</h3>
+      <p>삐약삐약 우리엄마 치킨됐어 꾸잉</p>
+    </div>
+  </div>
+  <div class="list-wrap">
+    <div class="search2">
+      <input required="required" type="text" id ="search2" name="user_name" placeholder="">
+    </div>
+    <h2 style="font-size:14px; text-align: center;">filter를 h3에다 주면 <br> h3만 사라졌다 생겼다 함.</h2>
+    <div class="list2">
+      <h3>심재환</h3>
+      <p>양말꾸러미댕꾸댕꾸</p>
+    </div>
+    <div class="list2">
+      <h3>심뽀삐</h3>
+      <p>안녕하세요 난 뽀삐뿌삐</p>
+    </div>
+    <div class="list2">
+      <h3>심룰루</h3>
+      <p>깽깽이발로갈까요 꾸꾸뿌뿌</p>
+    </div>
+    <div class="list2">
+      <h3>심삐약</h3>
+      <p>삐약삐약 우리엄마 치킨됐어 꾸잉</p>
+    </div>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#search").on("keyup", function() {
+        var value = $(this).val();
+        $(".list").filter(function() {
+            $(this).toggle($(this).text().indexOf(value) > -1)
+        });
+    });
+});
+$(document).ready(function(){
+    $("#search2").on("keyup", function() {
+        var value = $(this).val();
+        $("h3").filter(function() {
+            $(this).toggle($(this).text().indexOf(value) > -1)
+        });
+    });
+});
+</script>
+
+</body>
+</html>
